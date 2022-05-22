@@ -1,0 +1,21 @@
+{
+  "name": "loulou",
+  "version": "1.0.0",
+  "description": "Reham Ashraf's personal website",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass scss/main.scss css/style.css -w",
+    "compress:css": "node-sass css/style.css css/style.css --output-style compressed",
+    "build": "parcel build index.html"
+  },
+  "author": "Reham Ashraf",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.5.0",
+    "node-sass": "^7.0.1",
+    "parcel": "^2.5.0"
+  },
+  "targets": {
+    "main": false
+  }
+}

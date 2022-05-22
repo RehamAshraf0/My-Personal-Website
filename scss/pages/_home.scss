@@ -1,0 +1,220 @@
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 100rem;
+
+  margin: 15rem auto $margin-sections-bottom auto;
+
+  color: var(--primary-color-dark);
+
+  &__img-container {
+    @media only screen and (max-width: 850px) {
+      display: flex;
+      justify-content: center;
+      margin-bottom: $margin-sections-top;
+    }
+  }
+
+  &__img {
+    width: 35rem;
+    height: 35rem;
+
+    object-fit: cover;
+    object-position: top;
+
+    border-radius: 50%;
+    border: 0.2rem solid var(--primary-color-dark);
+
+    transition: all 1s ease;
+    animation: moveToRight 1s ease;
+
+    @media only screen and (max-width: 480px) {
+      width: 25rem;
+      height: 25rem;
+    }
+
+    @media only screen and (max-width: 350px) {
+      width: 20rem;
+      height: 20rem;
+    }
+  }
+
+  &__text-container {
+    display: grid;
+    grid-template-rows: minmax(8rem, 11rem) 1fr;
+    align-content: center;
+
+    animation: moveToLeft 1s ease;
+
+    font-size: $font-size-normal;
+    line-height: $line-height-normal;
+
+    @media only screen and (max-width: 850px) {
+      text-align: center;
+    }
+
+    @media only screen and (max-width: 480px) {
+      font-size: $font-size-normal-sm;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+    align-self: flex-start;
+    font-size: $font-size-normal;
+
+    @media only screen and (max-width: 480px) {
+      font-size: $font-size-normal-sm;
+    }
+  }
+
+  @media only screen and (max-width: 850px) {
+    grid-template-columns: 1fr;
+    padding: 0 $padding-sides;
+  }
+
+  @media only screen and (max-width: 480px) {
+    padding: 0 $padding-sides-sm;
+  }
+}
+
+.projects {
+  margin: $margin-sections-top 0 $margin-sections-bottom 0;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5rem;
+
+  justify-content: center;
+  justify-items: center;
+
+  margin: $margin-sections-top auto;
+  max-width: 180rem;
+  padding: 0rem $padding-sides;
+
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 6rem;
+  }
+
+  @media only screen and (max-width: 850px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media only screen and (max-width: 480px) {
+    padding: 0 $padding-sides-sm;
+  }
+}
+
+.skills {
+  margin: $margin-sections-top 0 $margin-sections-bottom 0;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    max-width: 50rem;
+    margin: $margin-sections-top auto;
+  }
+
+  &__img-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    width: 70%;
+    transition: all 0.4s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__text {
+    font-size: $font-size-normal;
+    color: var(--primary-color-dark);
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    line-height: $line-height-normal;
+
+    @media only screen and (max-width: 850px) {
+      width: 90%;
+    }
+    @media only screen and (max-width: 480px) {
+      font-size: $font-size-normal-sm;
+    }
+  }
+}
+
+.contact {
+  margin: $margin-sections-top 0 $margin-sections-bottom 0;
+
+  &__box {
+    margin: $margin-sections-top 0;
+
+    @media only screen and (max-width: 850px) {
+      padding: 0 $padding-sides-sm;
+    }
+  }
+
+  &__text {
+    font-size: $font-size-normal;
+    color: var(--primary-color-dark);
+
+    @media only screen and (max-width: 480px) {
+      font-size: $font-size-normal-sm;
+    }
+  }
+
+  &__btn {
+    text-decoration: none;
+    display: inline-block;
+    background-color: var(--primary-color-dark);
+    color: var(--tertiary-color);
+    padding: 2rem 15rem;
+    font-size: $font-size-normal;
+    border-radius: 0.5rem;
+    margin-top: $margin-sections-top;
+
+    transition: all 0.4s ease;
+
+    position: relative;
+
+    opacity: 0;
+
+    @media only screen and (max-width: 370px) {
+      padding: 2rem 0;
+      width: 100%;
+      font-size: $font-size-normal-sm;
+    }
+
+    &:hover {
+      &::before {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.4 ease;
+      background-color: var(--primary-color-light);
+      border-radius: 0.5rem;
+      transition: all 0.4s ease;
+      opacity: 1;
+    }
+  }
+}
