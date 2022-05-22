@@ -1,0 +1,39 @@
+.footer {
+  background-color: var(--primary-color-dark);
+
+  color: var(--tertiary-color);
+  height: 7rem;
+  clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  font-size: $font-size-normal-sm;
+
+  @media only screen and (max-width: 850px) {
+    height: 10rem;
+  }
+
+  &__text {
+    @media only screen and (max-width: 850px) {
+      text-align: center;
+      padding: 0 $padding-sides-sm;
+    }
+
+    @media only screen and (max-width: 370px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--secondary-color-dark);
+    display: inline-block;
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: rotate(-2deg);
+    }
+  }
+}

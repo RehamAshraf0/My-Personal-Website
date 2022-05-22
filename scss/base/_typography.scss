@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.heading-2 {
+  color: var(--primary-color-dark);
+
+  font-size: 3rem;
+  display: inline-block;
+  padding: 1rem;
+  transform: rotate(2deg);
+
+  background-image: linear-gradient(
+    to right,
+    var(--tertiary-color),
+    var(--primary-color)
+  );
+
+  border-bottom: 0.2rem solid currentColor;
+
+  transition: all 0.4s ease;
+
+  @media only screen and (max-width: 350px) {
+    font-size: 2rem;
+  }
+
+  &:hover {
+    transform: rotate(-2deg);
+  }
+}
